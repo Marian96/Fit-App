@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.marianpusk.fit_app.ui.home.HomeFragment"
+        android:label="@string/menu_home" />
+
+    <fragment
+        android:id="@+id/nav_training_plans"
+        android:name="com.marianpusk.fit_app.ui.training_plans.TrainingPlansFragment"
+        android:label="@string/menu_training_plans"
+        tools:layout="@layout/fragment_gallery" >
+        <action
+            android:id="@+id/action_nav_training_plans_to_addingPlanFragment"
+            app:destination="@+id/addingPlanFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_slideshow"
+        android:name="com.marianpusk.fit_app.ui.slideshow.SlideshowFragment"
+        android:label="@string/menu_slideshow"
+        tools:layout="@layout/fragment_slideshow" />
+
+    <fragment
+        android:id="@+id/nav_tools"
+        android:name="com.marianpusk.fit_app.ui.tools.ToolsFragment"
+        android:label="@string/menu_tools"
+        tools:layout="@layout/fragment_tools" />
+
+    <fragment
+        android:id="@+id/nav_share"
+        android:name="com.marianpusk.fit_app.ui.share.ShareFragment"
+        android:label="@string/menu_share"
+        tools:layout="@layout/fragment_share" />
+
+    <fragment
+        android:id="@+id/nav_send"
+        android:name="com.marianpusk.fit_app.ui.send.SendFragment"
+        android:label="@string/menu_send"
+        tools:layout="@layout/fragment_send" />
+    <fragment
+        android:id="@+id/addingPlanFragment"
+        android:name="com.marianpusk.fit_app.ui.adding_plan.AddingPlanFragment"
+        android:label="AddingPlanFragment" >
+        <action
+            android:id="@+id/action_addingPlanFragment_to_nav_training_plans"
+            app:destination="@id/nav_training_plans" />
+    </fragment>
+</navigation>
